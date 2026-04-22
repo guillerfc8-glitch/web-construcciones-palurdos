@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONSTRUCCIONES PALURDOS</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: #eee;
+    }
+
+    header {
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 4px solid #b30000;
+    }
+
+    header img {
+      height: 75px;
+    }
+
+    header div {
+      text-align: center;
+      width: 100%;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #f5f5f5;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      color: #ffcc00;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #b30000;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: #111;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+      background: #ffcc00;
+      color: #111;
+    }
+
+    .seccion {
+      display: none;
+      max-width: 900px;
+      margin: 30px auto;
+      background: #f4f4f4;
+      color: #111;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .activa {
+      display: block;
+    }
+
+    h2 {
+      color: #b30000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+
+    .card {
+      background: #111;
+      color: #ffcc00;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="data:image/webp;base64,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" alt="Logo">
+
+  <div>
+    <h1>Construcciones Palurdos</h1>
+    <p>Con los precios más absurdos</p>
+  </div>
+</header>
+
+<nav>
+  <button onclick="mostrar('info')">Información</button>
+  <button onclick="mostrar('obras')">Obras</button>
+  <button onclick="mostrar('mapa')">Mapa</button>
+  <button onclick="mostrar('integrantes')">Integrantes</button>
+</nav>
+
+<section id="info" class="seccion activa">
+  <h2>Información de la empresa</h2>
+  <p>
+    Somos una empresa de construcción especializada en proyectos urbanos en Madrid.
+    Trabajamos en edificios modernos, reformas y grandes estructuras.
+  </p>
+  <p>
+    Contamos con más de 67 años de experiencia y un equipo de palurdos preparado para construir rápido y barato.
+  </p>
+  <p>
+    Nuestro objetivo es hacer obras grandes con resultados visibles y llamativos en toda la ciudad.
+  </p>
+</section>
+
+<section id="obras" class="seccion">
+  <h2>Obras en Madrid</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=60">
+      Construcción urbana
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=60">
+      Edificios en desarrollo
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=800&q=60">
+      Obras modernas
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=800&q=60">
+      Estructuras en Madrid
+    </div>
+  </div>
+</section>
+
+<section id="mapa" class="seccion">
+  <h2>Obra destacada en Madrid</h2>
+  <p>Proyecto en desarrollo en la zona de Nueva de Madrid Norte.</p>
+  <iframe src="https://www.google.com/maps?q=Madrid+Nuevo+Norte&output=embed"></iframe>
+</section>
+
+<section id="integrantes" class="seccion">
+  <h2>Integrantes del grupo - 2º A</h2>
+  <div class="grid">
+    <div>Guille</div>
+    <div>Ciro</div>
+    <div>Hugo</div>
+    <div>Imanol</div>
+  </div>
+</section>
+
+<script>
+  function mostrar(id) {
+    document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
+    document.getElementById(id).classList.add('activa');
+  }
+</script>
+
+</body>
+</html>
